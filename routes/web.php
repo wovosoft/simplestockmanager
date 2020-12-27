@@ -19,7 +19,7 @@ Route::middleware(['auth'])->group(function () {
         ->name('ckfinder_examples');
 
 
-    Route::get('/{url?}', fn() => view('layouts.dashboard'))->name('Admin');
+    Route::get('/{url?}', "HomeController@admin")->name('Admin');
 });
 
 Route::middleware(['auth'])->prefix('backend')->name('Backend.')->group(function () {

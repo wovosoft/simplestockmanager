@@ -12,13 +12,10 @@
 
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
     @routes
-    @include('ckfinder::setup')
-
-    <script defer src="{{ mix('js/app-client.js') }}"></script>
 </head>
 <body class="h-100" style="overflow-x: hidden;">
 <div id="app"></div>
-
+<script defer src="{{ mix('js/app-client.js') }}"></script>
 {{--{!!--}}
 {{--    ssr('js/app-server.js')--}}
 {{--    ->fallback('<div id="app"></div>')--}}
