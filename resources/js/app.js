@@ -18,12 +18,12 @@ router.afterEach((to, from, next) => {
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-import {BootstrapVue, IconsPlugin} from 'bootstrap-vue';
+import {BootstrapVue} from 'bootstrap-vue';
 
 // Install BootstrapVue
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin);
+// Vue.use(IconsPlugin);
 import filters from "./partials/filters";
 
 Vue.use(filters);
@@ -35,64 +35,13 @@ import TheContainer from "./containers/TheContainer";
 Vue.prototype.$log = console.log.bind(this);
 Vue.prototype.route = window.route;
 
-
-
-import CKEditor from '@ckeditor/ckeditor5-vue';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
-Vue.use(CKEditor);
-Vue.prototype.ClassicEditor = ClassicEditor;
-Vue.prototype.editorConfig = {
-    ckfinder: {
-        uploadUrl: route('ckfinder_connector', {
-            command: 'QuickUpload',
-            type: 'Files',
-            responseType: 'json'
-        }).url(),
-        filebrowserBrowseUrl: route('ckfinder_connector').url(),
-        filebrowserImageBrowseUrl: route('ckfinder_browser', {type: 'Images'}).url(),
-        filebrowserUploadUrl: route('ckfinder_connector', {
-            command: 'QuickUpload',
-            type: 'Files'
-        }).url(),
-        filebrowserImageUploadUrl: route('ckfinder_connector', {
-            command: 'QuickUpload',
-            type: 'Image'
-        }).url(),
-        options: {
-            resourceType: 'Images'
-        }
-    },
-    toolbar: {
-        items: [
-            'heading',
-            '|',
-            'bold',
-            'italic',
-            'link',
-            'bulletedList',
-            'numberedList',
-            '|',
-            'indent',
-            'outdent',
-            '|',
-            'imageUpload',
-            'ckFinder',
-            'blockQuote',
-            'insertTable',
-            'mediaEmbed',
-            'undo',
-            'redo'
-        ]
-    },
-};
 import {msgBox} from "@/partials/datatable";
 
-export default new Vue({
+(new Vue({
     router,
     store,
     render: h => h(TheContainer),
     methods: {
         msgBox
     }
-});
+})).$mount('#app');
