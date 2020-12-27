@@ -37,11 +37,11 @@ Vue.prototype.route = window.route;
 
 import {msgBox} from "@/partials/datatable";
 
-(new Vue({
+export default new Vue({
     router,
     store,
     render: h => h(TheContainer),
     methods: {
         msgBox
     }
-})).$mount('#app');
+}).$mount('#app');

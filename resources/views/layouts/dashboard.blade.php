@@ -15,7 +15,7 @@
 </head>
 <body class="h-100" style="overflow-x: hidden;">
 <div id="app"></div>
-<script defer src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 {{--{!!--}}
 {{--    ssr('js/app-server.js')--}}
 {{--    ->fallback('<div id="app"></div>')--}}
